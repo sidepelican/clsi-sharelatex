@@ -82,7 +82,7 @@ module.exports = LatexRunner =
 
 	_platexCommand: (mainFile) ->
 		LatexRunner._latexmkBaseCommand.concat [
-			"-pdfdvi", "-e", "$latex='platex -synctex=1 -interaction=batchmode %O %S'",
+			"-pdfdvi", "-e", "$latex='platex -shell-escape -synctex=1 -interaction=batchmode %O %S'",
 			Path.join("$COMPILE_DIR", mainFile)
 		]
 
